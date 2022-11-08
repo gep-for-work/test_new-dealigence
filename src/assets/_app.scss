@@ -1,0 +1,86 @@
+@import "variables";
+@import "libs";
+
+#app {
+  display: flex;
+  min-width: 100vw;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+body {
+  font-size: 24px;
+}
+
+table {
+  width: 75%;
+  margin: 0 auto;
+  padding: 16px;
+  min-width: 512px;
+  text-align: center;
+  border-spacing: 0;
+  border-collapse: separate;
+}
+
+tr {
+  border-bottom: 1px solid red;
+
+  th:first-child,
+  td:first-child {
+    border-left: 1px solid $border-color;
+  }
+
+  th:last-child,
+  td:last-child {
+    border-right: 1px solid $border-color;
+  }
+
+  th:first-child {
+    border-radius: $border-radius 0 0 0;
+  }
+
+  th:last-child {
+    border-radius: 0 $border-radius 0 0;
+  }
+
+  &:last-child td {
+    border-bottom: 1px solid $border-color;
+
+    &:first-child {
+      border-radius: 0 0 0 $border-radius;
+    }
+
+    &:last-child {
+      border-radius: 0 0 $border-radius 0;
+    }
+  }
+
+  &:nth-child(even) {
+    background: #f8f8f8;
+  }
+}
+
+th,
+td {
+  border: none;
+  padding: 0.75rem 1.25rem;
+  text-align: left;
+}
+
+th {
+  font-size: 1.5em;
+  background: #ededed;
+  border-top: 1px solid $border-color;
+  font-weight: bold;
+}
+
+td {
+  width: 20%;
+  vertical-align: top;
+}
